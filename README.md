@@ -1,20 +1,74 @@
-from cryptography.fernet import Fernet
-key=Fernet.generate_key()
+# 🔐 Password Manager (Full Stack + PWA)
 
-with open("secret.key", "wb") as key_file:
-    key_file.write(key)
-    
-print("secret.key generated and saved.")
+A secure **Password Manager application** built using **Flask (Python)** for the backend and **HTML, CSS, JavaScript** for the frontend.  
+The application supports **encrypted password storage**, **CRUD operations**, and can be installed as a **mobile app using PWA technology**.
 
-def load_key():
-    return open("secret.key", "rb").read()
+---
 
-def encrypt_password(password):
-    key = load_key()
-    fernet = Fernet(key)
-    return fernet.encrypt(password.encode()).decode()
+## 🚀 Features
 
-def decrypt_password(encrypted_password):
-    key = load_key()
-    fernet = Fernet(key)
-    return fernet.decrypt(encrypted_password.encode()).decode()
+- 🔐 Password encryption using **Fernet (cryptography)**
+- ➕ Add new passwords
+- 👀 View stored passwords
+- 📋 Copy passwords to clipboard
+- ✏️ Edit existing passwords
+- ❌ Delete passwords
+- 🔍 Search passwords (basic)
+- 📱 Installable as a **Mobile App (PWA)**
+
+---
+
+## 🧠 How Security Works
+
+- Passwords are **never stored in plain text**
+- Before saving to the database, passwords are **encrypted**
+- When displaying, they are **decrypted only in memory**
+- Encryption key is stored locally and **excluded from GitHub**
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- Python
+- Flask
+- Flask-CORS
+- SQLite
+- Cryptography (Fernet)
+- Gunicorn (for deployment)
+
+### Frontend
+- HTML
+- CSS
+- JavaScri
+
+
+password-manager/
+│
+├── backend/
+│ ├── app.py
+│ ├── database.py
+│ ├── encryption.py
+│ ├── requirements.txt
+│
+├── frontend/
+│ ├── index.html
+│ ├── style.css
+│ ├── script.js
+│ ├── manifest.json
+│ ├── service-worker.js
+│
+├── .gitignore
+├── README.md
+
+
+---
+
+## ▶️ Run Locally
+
+### 1️⃣ Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
