@@ -1,0 +1,73 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #ffffff;
+  padding: 20px;
+}
+
+h1 {
+  color: #00e676;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #00e676;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #00c853;
+}
+
+.card {
+  background: #1e1e1e;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+.form {
+  margin: 20px 0;
+  max-width: 300px;
+}
+
+.form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.form button {
+  width: 100%;
+}
+.card button {
+  margin-top: 10px;
+  background: #ff5252;
+  color: white;
+}
+
+.card button:hover {
+  background: #ff1744;
+}
+
+.card button:first-of-type {
+  background: #2979ff;
+  color: white;
+  margin-right: 8px;
+}
+
+.card button:first-of-type:hover {
+  background: #1565c0;
+}
+#search {
+  padding: 8px;
+  width: 300px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+}

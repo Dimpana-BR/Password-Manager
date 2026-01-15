@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+backend/venv/
+venv copy/
+
+# Secrets
+secret.key
+backend/secret.key
+passwords.db
+backend/passwords.db

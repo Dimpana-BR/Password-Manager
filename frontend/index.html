@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Password Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00e676">
+
+</head>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+      .then(() => console.log("Service Worker Registered"));
+  }
+</script>
+
+<body>
+
+  <h1>🔐 Password Manager</h1>
+  <div class="form">
+  <input type="text" id="website" placeholder="Website / App name">
+  <input type="text" id="username" placeholder="Username / Email">
+  <input type="password" id="password" placeholder="Password">
+  <input type="text" id="notes" placeholder="Notes (optional)">
+  
+  <button onclick="addPassword()">Add Password</button>
+</div>
+<input
+  type="text"
+  id="search"
+  placeholder="Search by website..."
+  onkeyup="searchPasswords()"
+/>
+
+
+  <button onclick="loadPasswords()">View Passwords</button>
+
+  <div id="password-list"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
