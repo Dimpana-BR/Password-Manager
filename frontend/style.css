@@ -1,73 +1,141 @@
+:root {
+    --primary: #6a11cb;
+    --secondary: #2575fc;
+    --bg-dark: #0f0c29;
+    --glass: rgba(255, 255, 255, 0.1);
+    --text: #ffffff;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background: #121212;
-  color: #ffffff;
-  padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--text);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
-h1 {
-  color: #00e676;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-button {
-  padding: 10px 15px;
-  border: none;
-  background: #00e676;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 6px;
+header {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-button:hover {
-  background: #00c853;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #00d2ff, #3a7bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+}
+
+/* Form Styles */
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    box-sizing: border-box;
+}
+
+.password-input-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.gen-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: var(--primary);
+    padding: 7px 12px;
+}
+
+#main-btn {
+    width: 100%;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Password Card Styles */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .card {
-  background: #1e1e1e;
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 8px;
-}
-.form {
-  margin: 20px 0;
-  max-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--secondary);
+    transition: transform 0.2s;
 }
 
-.form input {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: none;
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.form button {
-  width: 100%;
-}
-.card button {
-  margin-top: 10px;
-  background: #ff5252;
-  color: white;
+.card h4 { margin: 0 0 10px 0; color: #00d2ff; }
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.card button:hover {
-  background: #ff1744;
+.btn-small {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
-.card button:first-of-type {
-  background: #2979ff;
-  color: white;
-  margin-right: 8px;
+.copy-btn { background: #4caf50; color: white; }
+.delete-btn { background: #ff5252; color: white; }
+.edit-btn { background: #2196f3; color: white; }
+
+/* Strength Meter */
+#strength-meter {
+    height: 4px;
+    width: 100%;
+    background: #444;
+    margin-bottom: 15px;
+    border-radius: 2px;
 }
 
-.card button:first-of-type:hover {
-  background: #1565c0;
-}
-#search {
-  padding: 8px;
-  width: 300px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: none;
+@media (max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; }
 }
