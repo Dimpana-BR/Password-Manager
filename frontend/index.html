@@ -3,53 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VaultGuard | Password Manager</title>
+    <title>VaultLight | Secure Manager</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1><i class="fas fa-shield-halved"></i> VaultGuard</h1>
-            <p>Secure your digital life</p>
-        </header>
-
-        <div class="main-grid">
-            <section class="glass-card form-section">
-                <h3><i class="fas fa-plus-circle"></i> Add New Entry</h3>
-                <div class="form-group">
-                    <input type="text" id="website" placeholder="Website / App Name">
-                    <input type="text" id="username" placeholder="Username / Email">
-                    <div class="password-input-wrapper">
-                        <input type="text" id="password" placeholder="Password" onkeyup="checkStrength(this.value)">
-                        <button class="gen-btn" onclick="generatePass()" title="Generate Strong Password">
-                            <i class="fas fa-wand-magic-sparkles"></i>
-                        </button>
-                    </div>
-                    <div id="strength-meter"></div>
-                    <textarea id="notes" placeholder="Notes (optional)"></textarea>
-                    <button id="main-btn" onclick="addPassword()">Add Password</button>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fas fa-unlock-alt"></i>
+                <h2>VaultLight</h2>
+            </div>
+            
+            <div class="entry-form">
+                <h3>Create New</h3>
+                <input type="text" id="website" placeholder="Website Name">
+                <input type="text" id="username" placeholder="Username/Email">
+                <div class="pass-group">
+                    <input type="text" id="password" placeholder="Password" onkeyup="checkStrength(this.value)">
+                    <button onclick="generatePass()" class="icon-btn" title="Generate"><i class="fas fa-magic"></i></button>
                 </div>
-            </section>
+                <div id="strength-meter"></div>
+                <textarea id="notes" placeholder="Notes..."></textarea>
+                <button id="main-btn" class="primary-btn" onclick="addPassword()">Save Password</button>
+            </div>
+        </aside>
 
-            <section class="list-section">
-                <div class="search-bar">
+        <main class="content">
+            <div class="top-bar">
+                <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="search" placeholder="Search your vault..." onkeyup="searchPasswords()">
+                    <input type="text" id="search" placeholder="Search entries..." onkeyup="searchPasswords()">
                 </div>
-                
-                <div class="actions">
-                    <button class="secondary-btn" onclick="loadPasswords()">
-                        <i class="fas fa-sync"></i> Refresh List
-                    </button>
-                </div>
+                <button class="refresh-btn" onclick="loadPasswords()"><i class="fas fa-sync-alt"></i></button>
+            </div>
 
-                <div id="password-list" class="grid-container">
-                    </div>
-            </section>
-        </div>
+            <div id="password-list" class="password-grid">
+                </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
